@@ -3,17 +3,29 @@ My own implementation of the Transformer architecture
 https://arxiv.org/pdf/1706.03762
 
 ## Virtual Environment preparation
+Virtual environment should be created with python 3.11 or newer.
 ```bash
-poetry install
-``` 
-Unfortunately, torch installation with poetry is unstable. Thus, one should run torch installation via pip:
-* for non-cuda compatible chip (MacBook):
-```bash
-source $(poetry env info --path)/bin/activate
-python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+pyenv install 3.11.5
 ```
-* for cuda compatibile chip (NVIDIA GPU):
+Creating local virtual environment dedicated to this project:
 ```bash
-source $(poetry env info --path)/bin/activate
-python -m pip install torch --index-url https://download.pytorch.org/whl/cu121
+python3.11 -m venv .venv
+pip install --upgrade pip
+```
+Virtual environment activation:
+```bash
+source .venv/bin/activate
+```
+Dependency management is done with pip-tools.
+```bash
+pip install pip-tools
+```
+Dependencies used in the project should be added to `requirements.in` file.
+After update of `requirements.in` file please run:
+```bash
+pip-compile requirements.in
+```
+Update your local virtual environment accordingly to current `requirements.txt` file:
+```bash
+pip install -r requirements.txt
 ```

@@ -1,0 +1,31 @@
+[project]
+name = "transformer_self_implementation"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "torch >= 2.2.2",
+    "pandas",
+    "numpy",
+    "sentencepiece >= 0.2.0",
+    "datasets >= 4.0.0",
+    "fsspec >= 2023.10.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff",
+    "black",
+    "mypy",
+    "pip-tools",
+    "pre-commit"
+]
+
+[tool.ruff]
+line-length = 120
+select = ["E", "F", "W", "I"]
+
+[tool.black]
+line-length = 120
+
+[tool.mypy]
+ignore_missing_imports = true

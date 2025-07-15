@@ -16,16 +16,17 @@ Virtual environment activation:
 ```bash
 source .venv/bin/activate
 ```
-Dependency management is done with pip-tools.
+Installing all dependencies specified in `pyproject.toml:`
 ```bash
-pip install pip-tools
+pip install -e ".[dev]"
 ```
-Dependencies used in the project should be added to `requirements.in` file.
-After update of `requirements.in` file please run:
+To dump dependencies to requirements.txt please run:
 ```bash
-pip-compile requirements.in
+pip-compile pyproject.toml -o requirements.txt
+pip-compile --extra dev -o requirements-dev.txt pyproject.toml
+
 ```
-Update your local virtual environment accordingly to current `requirements.txt` file:
+Installing pre commit hooks (linters):
 ```bash
-pip install -r requirements.txt
+pre-commit install
 ```

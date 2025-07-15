@@ -23,6 +23,8 @@ pip install -e ".[dev]"
 To dump dependencies to requirements.txt please run:
 ```bash
 pip-compile pyproject.toml -o requirements.txt
+pip-compile --extra dev -o requirements-dev.txt pyproject.toml
+
 ```
 Installing pre commit hooks (linters):
 ```bash

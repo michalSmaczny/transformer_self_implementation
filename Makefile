@@ -1,6 +1,6 @@
 .PHONY: lint
 
 lint:
-	ruff check . --fix
 	black .
+	ruff check . --fix
 	mypy .

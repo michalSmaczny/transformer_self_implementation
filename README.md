@@ -2,7 +2,7 @@
 My own implementation of the Transformer architecture
 https://arxiv.org/pdf/1706.03762
 
-## Virtual Environment preparation
+### Virtual Environment preparation
 Virtual environment should be created with python 3.11 or newer.
 ```bash
 pyenv install 3.11.5
@@ -29,4 +29,15 @@ pip-compile --extra dev -o requirements-dev.txt pyproject.toml
 Installing pre commit hooks (linters):
 ```bash
 pre-commit install
+```
+### Data Preparation
+Download WMT-2014 dataset and tokenize:
+```bash
+python ./scripts/prepare_wmt_14_data.py \
+	--first_lang=de \
+	--second_lang=en \
+	--vocab_size=16000 \
+	--token_model=bpe \
+	--max_sentence_length=8384 \
+	--shuffle_input_sentence=True
 ```

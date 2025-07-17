@@ -133,6 +133,7 @@ celerybeat.pid
 .venv
 .idea
 data
+tokenizers
 env/
 venv/
 ENV/

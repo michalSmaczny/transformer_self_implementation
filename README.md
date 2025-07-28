@@ -39,5 +39,7 @@ python ./scripts/prepare_wmt_14_data.py \
 	--vocab_size=16000 \
 	--token_model=bpe \
 	--max_sentence_length=8384 \
-	--shuffle_input_sentence=True
+	--shuffle_input_sentence=True \
+	--train_tokenizer \
+	--tokenize_data
 ```
